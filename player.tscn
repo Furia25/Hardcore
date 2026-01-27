@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bsmoytp8c1gk4"]
+
+[ext_resource type="Script" uid="uid://dii804p1cyafj" path="res://scripts/player/player.gd" id="1_4flbx"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4flbx"]
+radius = 0.4
+
+[node name="Player" type="CharacterBody3D" unique_id=1699662868]
+script = ExtResource("1_4flbx")
+
+[node name="Head" type="Node3D" parent="." unique_id=1947050766]
+
+[node name="Camera" type="Camera3D" parent="Head" unique_id=558087976]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4363833, -0.36212337)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=764470183]
+shape = SubResource("CapsuleShape3D_4flbx")
+debug_color = Color(0.83601373, 0.2585029, 0.7253948, 0.41960785)
