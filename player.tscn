@@ -1,18 +1,52 @@
 [gd_scene format=3 uid="uid://bsmoytp8c1gk4"]
 
-[ext_resource type="Script" uid="uid://dii804p1cyafj" path="res://scripts/player/player.gd" id="1_4flbx"]
+[ext_resource type="Script" uid="uid://dii804p1cyafj" path="res://actors/player/player.gd" id="1_4flbx"]
+[ext_resource type="Script" uid="uid://2gplob4cp65p" path="res://core/StateMachine.gd" id="2_i3pqv"]
+[ext_resource type="Script" uid="uid://b0whj7tf6jifo" path="res://actors/player/states/idle.gd" id="3_i3pqv"]
+[ext_resource type="Script" uid="uid://cj7anq182c83u" path="res://actors/player/states/running.gd" id="4_2hs0m"]
+[ext_resource type="Script" uid="uid://dljw2fuuhyh7b" path="res://actors/player/states/jumping.gd" id="5_1jxqw"]
+[ext_resource type="Script" uid="uid://psktohv6bap" path="res://actors/player/states/falling.gd" id="6_dw050"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4flbx"]
 radius = 0.4
+height = 1.7
 
 [node name="Player" type="CharacterBody3D" unique_id=1699662868]
 script = ExtResource("1_4flbx")
+max_speed = 6.0
+walk_accel = 10.0
+walk_deccel = 20.0
+air_accel = 6.0
+air_deccel = 2.0
+jump_velocity = 5.0
 
 [node name="Head" type="Node3D" parent="." unique_id=1947050766]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5376755, -0.2732749)
 
 [node name="Camera" type="Camera3D" parent="Head" unique_id=558087976]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4363833, -0.36212337)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.15591776, -0.014012098)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=764470183]
 shape = SubResource("CapsuleShape3D_4flbx")
-debug_color = Color(0.83601373, 0.2585029, 0.7253948, 0.41960785)
+debug_color = Color(0, 0.58431375, 0.77254903, 1)
+
+[node name="StateMachine" type="Node" parent="." unique_id=2059028381 node_paths=PackedStringArray("initial_state")]
+script = ExtResource("2_i3pqv")
+initial_state = NodePath("Idle")
+metadata/_custom_type_script = "uid://2gplob4cp65p"
+
+[node name="Idle" type="Node" parent="StateMachine" unique_id=1217731417]
+script = ExtResource("3_i3pqv")
+metadata/_custom_type_script = "uid://d0s3qdstcntpg"
+
+[node name="Running" type="Node" parent="StateMachine" unique_id=826870274]
+script = ExtResource("4_2hs0m")
+metadata/_custom_type_script = "uid://d0s3qdstcntpg"
+
+[node name="Jumping" type="Node" parent="StateMachine" unique_id=1215456971]
+script = ExtResource("5_1jxqw")
+metadata/_custom_type_script = "uid://d0s3qdstcntpg"
+
+[node name="Falling" type="Node" parent="StateMachine" unique_id=1141887110]
+script = ExtResource("6_dw050")
+metadata/_custom_type_script = "uid://d0s3qdstcntpg"

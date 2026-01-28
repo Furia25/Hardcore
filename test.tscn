@@ -1,7 +1,8 @@
 [gd_scene format=4 uid="uid://wb5rhrosddvn"]
 
-[ext_resource type="Texture2D" uid="uid://bxmyxukyhrbnw" path="res://textures/placeholders/placeholder10.png" id="1_37kl0"]
+[ext_resource type="Texture2D" uid="uid://bxmyxukyhrbnw" path="res://assets/placeholders/placeholder10.png" id="1_37kl0"]
 [ext_resource type="PackedScene" uid="uid://bsmoytp8c1gk4" path="res://player.tscn" id="2_8uh7m"]
+[ext_resource type="Texture2D" uid="uid://ct08f8wcfukyp" path="res://assets/placeholders/placeholder11.png" id="3_6uqi0"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_mf4mk"]
 _surfaces = [{
@@ -30,6 +31,11 @@ data = PackedVector3Array(-0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.
 
 [sub_resource type="BoxMesh" id="BoxMesh_6uqi0"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ppyta"]
+albedo_color = Color(0.9843137, 0.11372549, 0.47843137, 1)
+albedo_texture = ExtResource("3_6uqi0")
+uv1_triplanar = true
+
 [node name="Main" type="Node3D" unique_id=2079898214]
 
 [node name="Plane" type="StaticBody3D" parent="." unique_id=1645961018]
@@ -48,16 +54,33 @@ shape = SubResource("ConcavePolygonShape3D_37kl0")
 environment = SubResource("Environment_6uqi0")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1336068212]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 11.381515, 0)
+transform = Transform3D(0.7254221, 0.6184221, -0.30218688, 0.384537, -4.03504e-08, 0.9231096, 0.57087135, -0.7858461, -0.23780622, 0, 11.381515, 0)
+light_color = Color(1, 0.8829387, 0.81722707, 1)
+light_energy = 2.0
+light_indirect_energy = 1.06
+light_volumetric_fog_energy = 7.495
 
 [node name="CharacterBody3D" parent="." unique_id=1699662868 instance=ExtResource("2_8uh7m")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.4106622, 0)
 
 [node name="Cube" type="StaticBody3D" parent="." unique_id=2041241635]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.176273, 2.6752558, 0)
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20.399443, 0.14681363, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Cube" unique_id=487572859]
+transform = Transform3D(0.99999976, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("BoxShape3D_8uh7m")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Cube" unique_id=87953374]
 mesh = SubResource("BoxMesh_6uqi0")
+surface_material_override/0 = SubResource("StandardMaterial3D_ppyta")
+
+[node name="Cube2" type="StaticBody3D" parent="." unique_id=606449904]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 8.176273, -0.7000153, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cube2" unique_id=926187695]
+transform = Transform3D(0.99999976, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("BoxShape3D_8uh7m")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Cube2" unique_id=2101704989]
+mesh = SubResource("BoxMesh_6uqi0")
+surface_material_override/0 = SubResource("StandardMaterial3D_ppyta")
