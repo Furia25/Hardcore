@@ -1,8 +1,7 @@
 extends PlayerState
 
 func enter(previous_state_path: String, data := {}) -> void:
-	player.deccel = player.air_deccel;
-	player.accel = player.air_accel;
+	player.set_speed(Player.SPEED_TYPE.AIR);
 
 func physics_update(delta: float) -> void:
 	player.apply_gravity(delta);

@@ -1,11 +1,13 @@
 extends PlayerState
 
 func enter(previous_state_path: String, data := {}) -> void:
-	player.accel = player.walk_accel;
-	player.deccel = player.walk_deccel;
-	player.actual_max_speed = player.max_speed * player.walk_speed_ratio;
+	player.set_speed(Player.SPEED_TYPE.WALK);
 
 func physics_update(delta: float) -> void:
+	if Input.is_action_pressed("run"):
+		player.set_speed(Player.SPEED_TYPE.RUN);
+	else:
+		player.set_speed(Player.SPEED_TYPE.WALK);
 	player.apply_movement(delta);
 	player.move_and_slide();
 	if not player.is_on_floor():

@@ -13,7 +13,14 @@ height = 2.6
 
 [node name="Player" type="CharacterBody3D" unique_id=1699662868]
 script = ExtResource("1_4flbx")
-run_speed_ratio = 1.6
+max_speed = null
+walk_speed_ratio = null
+run_speed_ratio = 2.0
+walk_accel = null
+walk_deccel = null
+air_accel = null
+air_deccel = null
+jump_velocity = null
 
 [node name="Head" type="Node3D" parent="." unique_id=1947050766]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5376755, -0.2732749)
