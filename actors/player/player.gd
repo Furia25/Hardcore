@@ -37,8 +37,12 @@ func _ready() -> void:
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("debug_game_end"):
 		get_tree().quit();
-	if event.is_action_pressed("debug_game_restart"):
+	if event.is_action_pressed("debug_f1"):
 		get_tree().reload_current_scene();
+	if event.is_action_pressed("debug_f2"):
+		WorldConstants.force_night();
+	if event.is_action_pressed("debug_f3"):
+		WorldConstants.force_day();
 
 static func get_movement_vector() -> Vector2:
 	return Input.get_vector("move_left", "move_right", "move_forward", "move_backward");
@@ -72,9 +76,6 @@ func set_speed(type : SPEED_TYPE) -> void:
 func apply_gravity(delta: float) -> void:
 	if not is_on_floor():
 		velocity.y -= gravity * delta;
-
-func _physics_process(delta: float) -> void:
-	print("Speed : %f" % velocity.length())
 
 func apply_movement(delta: float, acceleration: bool = true) -> void:
 	var direction = get_direction();

@@ -1,0 +1,34 @@
+[gd_resource type="Environment" format=3 uid="uid://bhywfrs0fg5f3"]
+
+[ext_resource type="Shader" uid="uid://q1t1c42p6hbf" path="res://assets/materials/sky_shader.gdshader" id="1_n3lfn"]
+[ext_resource type="Texture2D" uid="uid://rb14uf0b4v2s" path="res://Noise.png" id="2_pdgk2"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ykrsh"]
+shader = ExtResource("1_n3lfn")
+shader_parameter/use_directional_light = true
+shader_parameter/sun_color = Color(1, 1, 1, 1)
+shader_parameter/sun_energy = 16.0
+shader_parameter/dark_sun_color = Color(0.018249117, 0.017482713, 0.018066933, 1)
+shader_parameter/dark_sun_strength = 16.0
+shader_parameter/night = 0.0
+shader_parameter/cloud_color = Color(0.29411766, 0.40392157, 0.52156866, 1)
+shader_parameter/cloud_density = 3.5
+shader_parameter/cloud_depth = 1.0
+shader_parameter/cloud_sag = 2.0
+shader_parameter/noise_texture = ExtResource("2_pdgk2")
+shader_parameter/noise_tiling = Vector2(0.4, 0.4)
+shader_parameter/wind_speed = Vector2(0.3, 0.2)
+shader_parameter/ground_bottom_color = Color(0.2, 0.169, 0.133, 1)
+shader_parameter/ground_curve = 0.04
+shader_parameter/exposure = 1.0
+
+[sub_resource type="Sky" id="Sky_ppyta"]
+sky_material = SubResource("ShaderMaterial_ykrsh")
+
+[resource]
+background_mode = 2
+sky = SubResource("Sky_ppyta")
+ambient_light_source = 3
+ambient_light_color = Color(1.353256, 1.353256, 1.353256, 1)
+reflected_light_source = 2
+adjustment_enabled = true

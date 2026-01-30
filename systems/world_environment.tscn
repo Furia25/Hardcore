@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://0rfqetlxrh2d"]
+
+[ext_resource type="Environment" uid="uid://bhywfrs0fg5f3" path="res://systems/environment.tres" id="1_e63i8"]
+[ext_resource type="Script" uid="uid://up6wa5py7bjr" path="res://systems/environment_manager.gd" id="3_x002e"]
+
+[sub_resource type="Curve" id="Curve_e63i8"]
+_data = [Vector2(0.225, 0.023563981), 0.0, 6.4096813, 0, 0, Vector2(0.5214286, 0.7798232), 0.0, 0.0, 0, 0, Vector2(0.69285715, 0.9425626), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[node name="WorldEnvironment" type="WorldEnvironment" unique_id=1637537011]
+environment = ExtResource("1_e63i8")
+script = ExtResource("3_x002e")
+night_curve = SubResource("Curve_e63i8")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=15452272]
+transform = Transform3D(0.001364962, 0.9815537, 0.19118161, -0.7336923, -0.12892143, 0.66713935, 0.6794804, -0.14117911, 0.7199826, 0, 20, 0)
+light_color = Color(0.89558685, 0.8828752, 0.8860492, 1)
+light_energy = 3.67
+light_indirect_energy = 1.06
+light_volumetric_fog_energy = 7.495
+shadow_enabled = true

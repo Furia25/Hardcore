@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://bb1meebedkpst"]
+
+[ext_resource type="Script" uid="uid://tilit8y70qam" path="res://core/world_constants.gd" id="1_6r04e"]
+
+[node name="WorldConstants" type="Node" unique_id=84612888]
+script = ExtResource("1_6r04e")
+
+[node name="DayNightCycleTimer" type="Timer" parent="." unique_id=1155157409]
+one_shot = true
+
+[connection signal="day_started" from="." to="." method="_on_day_started"]
+[connection signal="night_started" from="." to="." method="_on_night_started"]
