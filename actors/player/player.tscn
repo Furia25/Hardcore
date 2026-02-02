@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bsmoytp8c1gk4"]
 
 [ext_resource type="Script" uid="uid://dii804p1cyafj" path="res://actors/player/player.gd" id="1_4flbx"]
-[ext_resource type="Script" uid="uid://2gplob4cp65p" path="res://core/StateMachine.gd" id="2_i3pqv"]
+[ext_resource type="Script" uid="uid://2gplob4cp65p" path="res://core/StateMachine/StateMachine.gd" id="2_i3pqv"]
 [ext_resource type="Script" uid="uid://b0whj7tf6jifo" path="res://actors/player/states/idle.gd" id="3_i3pqv"]
 [ext_resource type="Script" uid="uid://cj7anq182c83u" path="res://actors/player/states/running.gd" id="4_2hs0m"]
 [ext_resource type="Script" uid="uid://dljw2fuuhyh7b" path="res://actors/player/states/jumping.gd" id="5_1jxqw"]

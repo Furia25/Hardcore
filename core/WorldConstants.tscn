@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bb1meebedkpst"]
 
-[ext_resource type="Script" uid="uid://tilit8y70qam" path="res://core/world_constants.gd" id="1_6r04e"]
+[ext_resource type="Script" uid="uid://tilit8y70qam" path="res://core/WorldConstants.gd" id="1_6r04e"]
 
 [node name="WorldConstants" type="Node" unique_id=84612888]
 script = ExtResource("1_6r04e")
