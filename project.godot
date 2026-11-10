@@ -11,8 +11,8 @@ config_version=5
 [application]
 
 config/name="Hardcore"
-run/main_scene="uid://wb5rhrosddvn"
-config/features=PackedStringArray("4.6", "Forward Plus")
+run/main_scene="res://game.tscn"
+config/features=PackedStringArray("4.7", "Forward Plus")
 boot_splash/show_image=false
 boot_splash/use_filter=false
 config/icon="res://icon.svg"
@@ -21,6 +21,11 @@ config/icon="res://icon.svg"
 
 WorldConstants="*uid://bb1meebedkpst"
 EventBus="*uid://boc4xxspwrmhg"
+Profily="*uid://qmnu1ehm866e"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/at-icons/plugin.cfg", "res://addons/profily/plugin.cfg")
 
 [file_customization]
 

@@ -10,3 +10,4 @@ func _process(delta: float) -> void:
 	environment.adjustment_saturation = 1.0 - night_weight;
 	environment.ambient_light_energy = 1.0 + 16 * night_weight;
 	environment.adjustment_contrast = 1.0 + 0.15 * night_weight;
+	$DirectionalLight3D.light_specular = 1.0 + 2 * night_weight

@@ -1,6 +1,6 @@
 [gd_resource type="Environment" format=3 uid="uid://bhywfrs0fg5f3"]
 
-[ext_resource type="Shader" uid="uid://q1t1c42p6hbf" path="res://assets/materials/sky_shader.gdshader" id="1_n3lfn"]
+[ext_resource type="Shader" uid="uid://q1t1c42p6hbf" path="res://assets/shaders/sky_shader.gdshader" id="1_n3lfn"]
 [ext_resource type="Texture2D" uid="uid://rb14uf0b4v2s" path="res://Noise.png" id="2_pdgk2"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ykrsh"]
