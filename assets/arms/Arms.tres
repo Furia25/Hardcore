@@ -1,0 +1,13 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://stihw4w02374"]
+
+[ext_resource type="Texture2D" uid="uid://dr37erswsevbl" path="res://assets/arms/arms.png" id="1_1un7j"]
+
+[resource]
+resource_name = "Arms"
+cull_mode = 2
+albedo_texture = ExtResource("1_1un7j")
+texture_filter = 2
+disable_receive_shadows = true
+use_z_clip_scale = true
+z_clip_scale = 0.01
+metadata/_gltf_primary_texture_coord = 0

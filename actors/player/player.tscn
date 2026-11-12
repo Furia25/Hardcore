@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bsmoytp8c1gk4"]
 
 [ext_resource type="Script" uid="uid://dii804p1cyafj" path="res://actors/player/player.gd" id="1_4flbx"]
-[ext_resource type="PackedScene" uid="uid://un5yfrw4kfcn" path="res://assets/models/arms.tscn" id="2_bop6h"]
+[ext_resource type="PackedScene" uid="uid://vfv7uwji2hpl" path="res://assets/arms/arms.tscn" id="2_bop6h"]
 [ext_resource type="Script" uid="uid://2gplob4cp65p" path="res://core/StateMachine/StateMachine.gd" id="2_i3pqv"]
 [ext_resource type="Script" uid="uid://b0whj7tf6jifo" path="res://actors/player/states/idle.gd" id="3_i3pqv"]
 [ext_resource type="Script" uid="uid://cj7anq182c83u" path="res://actors/player/states/running.gd" id="4_2hs0m"]
@@ -20,10 +20,10 @@ run_speed_ratio = 1.6
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5376755, -0.2732749)
 
 [node name="Camera" type="Camera3D" parent="Head" unique_id=558087976]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.15591776, -0.014012098)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.15591776, 0.0058187842)
 
-[node name="AuxScene" parent="Head/Camera" unique_id=907411994 instance=ExtResource("2_bop6h")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, -1.6751524, -0.042522073)
+[node name="Arms" parent="Head/Camera" unique_id=1080870977 instance=ExtResource("2_bop6h")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, -1.730698, -0.08741093)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=764470183]
 shape = SubResource("CapsuleShape3D_4flbx")
